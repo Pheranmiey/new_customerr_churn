@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Churning Prediction</title>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .login {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="login">
+    <h1 class="text-center mb-4">Customer Churning Prediction</h1>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" name="Tenure" placeholder="Tenure" required="required"/>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="PreferredLoginDevice_" required="required">
+          <option value="">Preferred Login Device</option>
+          <option value="Mobile Phone">Mobile Phone</option>
+          <option value="Computer">Computer</option>
+          <option value="Phone">Phone</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="CityTier" placeholder="CityTier" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="WarehouseToHome" placeholder="WarehouseToHome" required="required"/>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="PreferredPaymentMode_" required="required">
+          <option value="">Preferred Payment Mode</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="Credit Card">Credit Card</option>
+          <option value="E wallet">E wallet</option>
+          <option value="UPI">UPI</option>
+          <option value="COD">COD</option>
+          <option value="CC">CC</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="Gender_" required="required">
+          <option value="">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="HourSpendOnApp" placeholder="HourSpendOnApp" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="NumberOfDeviceRegistered" placeholder="NumberOfDeviceRegistered" required="required"/>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="PreferedOrderCat_" required="required">
+          <option value="">Preferred Order Category</option>
+          <option value="Laptop & Accessory">Laptop & Accessory</option>
+          <option value="Mobile Phone">Mobile Phone</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Mobile">Mobile</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="SatisfactionScore" placeholder="SatisfactionScore" required="required"/>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="MaritalStatus_" required="required">
+          <option value="">Marital Status</option>
+          <option value="Married">Married</option>
+          <option value="Single">Single</option>
+          <option value="Divorced">Divorced</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="NumberOfAddress" placeholder="NumberOfAddress" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="Complain" placeholder="Complain" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="OrderAmountHikeFromlastYear" placeholder="OrderAmountHikeFromlastYear" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="CouponUsed" placeholder="CouponUsed" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="OrderCount" placeholder="OrderCount" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="DaySinceLastOrder" placeholder="DaySinceLastOrder" required="required"/>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="CashbackAmount" placeholder="CashbackAmount" required="required"/>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Predict</button>
+    </form>
+  </div>
+</div>
+
+{{result}}
+
+</body>
+</html>
