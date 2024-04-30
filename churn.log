@@ -357,3 +357,29 @@ INFO:werkzeug:172.18.0.45 - - [06/Apr/2024 18:23:40] "GET /single_prediction/cus
 INFO:werkzeug:172.18.0.45 - - [06/Apr/2024 18:26:14] "GET /predict_datapoint HTTP/1.1" 200 -
 INFO:werkzeug:172.18.0.45 - - [06/Apr/2024 18:26:46] "[32mPOST /predict_datapoint HTTP/1.1[0m" 302 -
 INFO:werkzeug:172.18.0.45 - - [06/Apr/2024 18:26:47] "GET /single_prediction/customer%20churns HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.20:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:13:16] "GET /predict_datapoint HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:13:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.20:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:17:44] "GET /predict_datapoint HTTP/1.1" 200 -
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:17:49] "GET /predict_datapoint HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.20:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:26:47] "GET /predict_datapoint HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.18.0.20:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:172.18.0.45 - - [30/Apr/2024 18:34:56] "GET /predict_datapoint HTTP/1.1" 200 -
