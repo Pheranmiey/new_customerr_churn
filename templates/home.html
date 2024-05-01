@@ -1,79 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Information Form</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
-    body {
-        background-color: #f8f9fa;
-    }
-    .form-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fefbff;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    .nav-bar {
-        background-color: #fff;
-        padding: 0;
-        margin-right: 20px;
-    }
-    .nav-item {
-        padding: 0;
-    }
-    .nav-text {
-        padding-left: 25px;
-        line-height: 42px;
-        font-weight: bold;
-        color: #59afc6;
-    }
-    .rectangle-2446 {
-        width: 242px;
-        height: 42px;
-        padding: 0 0 0 25px;
-        background-color: #ebfbff;
-    }
-    .rectangle-2447 {
-        width: 4px;
-        height: 42px;
-        position: absolute;
-        top: 0;
-        right: -4px;
-        background-color: #59afc6;
-    }
-    .popup {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        text-align: center;
-        position: fixed;
-        top: 50%;
-        left: 60%;
-        transform: translate(-50%, -50%);
-    }
-    button {
-        background-color: #007BFF;
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin-top: 20px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fefbff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .nav-bar {
+            background-color: #fff;
+            padding: 0;
+            margin-right: 20px;
+        }
+        .nav-item {
+            padding: 0;
+        }
+        .nav-text {
+            padding-left: 25px;
+            line-height: 42px;
+            font-weight: bold;
+            color: #59afc6;
+        }
+        .rectangle-2446 {
+            width: 242px;
+            height: 42px;
+            padding: 0 0 0 25px;
+            background-color: #ebfbff;
+        }
+        .rectangle-2447 {
+            width: 4px;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            right: -4px;
+            background-color: #59afc6;
+        }
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+        }
+        button {
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -92,24 +92,32 @@
         <div class="col-md-9">
             <div class="form-container">
                 <h2 class="text-center mb-4">Customer Information</h2>
-                <form id="customerForm" action="#" method="POST">
+                <form action="{{ url_for('predict_datapoint')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="tenure">Tenure</label>
-                                <input type="text" class="form-control" id="tenure" name="tenure" required>
+                                <input type="text" class="form-control" name="Tenure" placeholder="Tenure" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="city_tier">City Tier</label>
-                                <input type="text" class="form-control" id="city_tier" name="city_tier" required>
+                                <select class="form-control" name="PreferredLoginDevice_" required="required">
+                                    <option value="">Preferred Login Device</option>
+                                    <option value="Mobile Phone">Mobile Phone</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="Phone">Phone</option>
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="payment_mode">Preferred Payment Mode</label>
-                                <select class="form-control" id="payment_mode" name="payment_mode" required>
-                                    <option value="">Select</option>
+                                <input type="text" class="form-control" name="CityTier" placeholder="CityTier" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="WarehouseToHome" placeholder="Distance between Warehouse to Home" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="PreferredPaymentMode_" required="required">
+                                    <option value="">Preferred Payment Mode</option>
                                     <option value="Debit Card">Debit Card</option>
                                     <option value="Credit Card">Credit Card</option>
-                                    <option value="E Wallet">E Wallet</option>
+                                    <option value="E wallet">E wallet</option>
                                     <option value="UPI">UPI</option>
                                     <option value="COD">COD</option>
                                     <option value="CC">CC</option>
@@ -117,100 +125,62 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="app_hours">Hours Spent on App</label>
-                                <input type="text" class="form-control" id="app_hours" name="app_hours" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="order_category">Preferred Order Category</label>
-                                <select class="form-control" id="order_category" name="order_category" required>
-                                    <option value="">Select</option>
-                                    <option value="Food">Food</option>
-                                    <option value="Electronics">Electronics</option>
-                                    <option value="Clothing">Clothing</option>
+                                <select class="form-control" name="Gender_" required="required">
+                                    <option value="">Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="marital_status">Marital Status</label>
-                                <select class="form-control" id="marital_status" name="marital_status" required>
-                                    <option value="">Select</option>
-                                    <option value="Single">Single</option>
+                                <input type="text" class="form-control" name="HourSpendOnApp" placeholder="Hours Spent on App" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="NumberOfDeviceRegistered" placeholder="Number Of Devices Registered" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="PreferedOrderCat_" required="required">
+                                    <option value="">Preferred Order Category</option>
+                                    <option value="Laptop & Accessory">Laptop & Accessory</option>
+                                    <option value="Mobile Phone">Mobile Phone</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Grocery">Grocery</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="SatisfactionScore" placeholder="Customer Satisfaction Score" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="MaritalStatus_" required="required">
+                                    <option value="">Marital Status</option>
                                     <option value="Married">Married</option>
+                                    <option value="Single">Single</option>
                                     <option value="Divorced">Divorced</option>
                                 </select>
                             </div>
-
                             <div class="form-group">
-                              <label for="complaint_count">Number Of Customer Complaints</label>
-                              <select class="form-control" id="complaint_count" name="complaint_count" required>
-                                  <option value="">Select</option>
-                                  <option value="0">0</option>
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                              </select>
-                          </div>
-
-                          <div class="form-group">
-                            <label for="coupon_count">Number Of Coupons Used</label>
-                            <input type="text" class="form-control" id="coupon_count" name="coupon_count" required>
-                          </div>
-
-                          <div class="form-group">
-                              <label for="days_since_order">Days Since Last Order</label>
-                              <input type="text" class="form-control" id="days_since_order" name="days_since_order" required>
-                          </div>
+                                <input type="text" class="form-control" name="NumberOfAddress" placeholder="Number of Addresses" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="Complain" placeholder="Number Of Customer Complaints" required="required"/>
+                            </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="login_device">Preferred Login Device</label>
-                                <select class="form-control" id="login_device" name="login_device" required>
-                                    <option value="">Select</option>
-                                    <option value="Desktop">Desktop</option>
-                                    <option value="Mobile">Mobile</option>
-                                    <option value="Tablet">Tablet</option>
-                                </select>
+                                <input type="text" class="form-control" name="OrderAmountHikeFromlastYear" placeholder="Order Amount Hike from Last Year" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="distance_home_warehouse">Distance between Warehouse to Home</label>
-                                <input type="text" class="form-control" id="distance_home_warehouse" name="distance_home_warehouse" required>
+                                <input type="text" class="form-control" name="CouponUsed" placeholder="Coupon Used" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <select class="form-control" id="gender" name="gender" required>
-                                    <option value="">Select</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="unspecified">Unspecified</option>
-                                </select>
+                                <input type="text" class="form-control" name="OrderCount" placeholder="Order Count" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="device_count">Number Of Devices Registered</label>
-                                <select class="form-control" id="device_count" name="device_count" required>
-                                    <option value="">Select</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
+                                <input type="text" class="form-control" name="DaySinceLastOrder" placeholder="Days Since Last Order" required="required"/>
                             </div>
                             <div class="form-group">
-                                <label for="satisfaction_score">Customer Satisfaction Score</label>
-                                <input type="text" class="form-control" id="satisfaction_score" name="satisfaction_score" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="address_count">Number of Addresses</label>
-                                <input type="text" class="form-control" id="address_count" name="address_count" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="amount_hike">Order Amount Hike from Last Year</label>
-                                <input type="text" class="form-control" id="amount_hike" name="amount_hike" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="order_count">Order Count</label>
-                                <input type="text" class="form-control" id="order_count" name="order_count" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="average_cashback">Average Cashback Amount</label>
-                                <input type="text" class="form-control" id="average_cashback" name="average_cashback" required>
+                                <input type="text" class="form-control" name="CashbackAmount" placeholder="Cashback Amount" required="required"/>
                             </div>
                         </div>
                     </div>
@@ -221,41 +191,7 @@
     </div>
 </div>
 
-<div class="overlay" id="overlay" style="display: none;">
-    <div class="popup">
-        <h2>Churn Detection Result</h2>
-        <p id="popupText"></p>
-        <button onclick="closePopup()">Close</button>
-    </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#customerForm').submit(function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            
-            // Here you would perform your churn detection logic and set the variable churn accordingly
-            var churn = "Yes"; // Example: Set churn variable to "Yes" or "No" based on prediction
-            
-            // Show pop-up based on churn result
-            if (churn === "Yes") {
-                showPopup("Stop! Churn detected!");
-            } else {
-                showPopup("Hooray! No churn celebration!");
-            }
-        });
-    });
-
-    function showPopup(message) {
-        document.getElementById("popupText").innerText = message;
-        document.getElementById("overlay").style.display = "flex";
-    }
-
-    function closePopup() {
-        document.getElementById("overlay").style.display = "none";
-    }
-</script>
+{{result}}
 
 </body>
 </html>
