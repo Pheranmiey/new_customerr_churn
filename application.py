@@ -131,9 +131,9 @@ def predict_datapoint():
             predict = model.predict(new_data)
 
             if predict[0] == 1:
-                result = 'customer churns'
+                result = 'Stop! Churn detected!'
             else:
-                result = 'customer does not churn'
+                result = 'Hooray! No churn celebration!'
             
             # Redirect to single_prediction page with the result
             return redirect(url_for('single_prediction', result=result))
