@@ -95,6 +95,7 @@
                 <form action="{{ url_for('predict_datapoint')}}" method="post">
                     <div class="row">
                         <div class="col-md-6">
+                            <!-- Left half of the form -->
                             <div class="form-group">
                                 <input type="text" class="form-control" name="Tenure" placeholder="Tenure" required="required"/>
                             </div>
@@ -148,6 +149,9 @@
                                     <option value="Others">Others</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Right half of the form -->
                             <div class="form-group">
                                 <input type="text" class="form-control" name="SatisfactionScore" placeholder="Customer Satisfaction Score" required="required"/>
                             </div>
@@ -165,8 +169,6 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="Complain" placeholder="Number Of Customer Complaints" required="required"/>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="OrderAmountHikeFromlastYear" placeholder="Order Amount Hike from Last Year" required="required"/>
                             </div>
